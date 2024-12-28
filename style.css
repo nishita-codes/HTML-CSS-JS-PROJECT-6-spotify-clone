@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 body {
-    background-color: antiquewhite;
+    background-color:#807970;
 }
 
 * {
@@ -69,4 +69,43 @@ nav ul li{
 #myProgressBar{
     width:80vw;
     
+}
+.songItemcontainer{
+    margin-top:44px;
+}
+.songItem{
+    height:50px;
+    display: flex;
+    background-color: #c9c3bb;
+    color:black;
+    width:90%;
+    margin: 12px 0px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.songItem img{
+    width:43px;
+    margin:0px 5px;
+    border-radius: 34px;
+}
+.timestemp{
+    margin:0px 23px;
+}
+.timestemp i{
+    cursor: pointer;
+}
+.songInfo{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left:9vw;
+    font-family: 'varela round' ,sans-serif;
+}
+.songInfo img{
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
