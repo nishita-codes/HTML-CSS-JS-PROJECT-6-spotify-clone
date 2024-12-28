@@ -2,26 +2,26 @@ console.log("Welcome to spotify");
 
 //initialize the variables
 let songIndex=0;
-let audioElement = new Audio('1.mp3');
+let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
 
 let songs =[
-    {songName: "Let me Love You" , filePath:"songs/1.mp3" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"songs/1.mp3" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"songs/" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"song/" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"song/" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"song/" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"song/" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"song/" , CoverPath: "Covers/"},
-    {songName: "Let me Love You" , filePath:"song/" , CoverPath: "Covers/"}
+    {songName: "You And Me" , filePath:"songs/1.mp3" , CoverPath: "images/img-1.jpeg"},
+    {songName: "Thousand Year" , filePath:"songs/1.mp3" , CoverPath: "images/img-2.jpeg"},
+    {songName: "Peelings-Pushpa2" , filePath:"songs/" , CoverPath: "images/img-3.jpeg"},
+    {songName: "Kuch is Tarah" , filePath:"song/" , CoverPath: "images/img-4.jpeg"},
+    {songName: "Love me Like You Do" , filePath:"song/" , CoverPath: "images/img-5.jpeg"},
+    {songName: "Abhi Abhi" ,filePath:"song/" , CoverPath: "images/img-6.jpeg"},
+    {songName: "Teri Ore" , filePath:"song/" , CoverPath: "images/img-7.jpeg"},
+    {songName: "Saathiya" , filePath:"song/" , CoverPath: "images/img-8.jpeg"},
+    {songName: "Closer" , filePath:"song/" , CoverPath: "images/img-9.jpeg"}
 ]
 songItem.forEach((element , i) => {
     console.log(element, i);
-    element.getElementsByTagName('img')[0].src =songs[i].filePath;
+    element.getElementsByTagName('img')[0].src =songs[i].CoverPath;
 });
 
 // audioElement.play();
