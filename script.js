@@ -21,7 +21,8 @@ let songs =[
 ]
 songItem.forEach((element , i) => {
     console.log(element, i);
-    element.getElementsByTagName('img')[0].src =songs[i].CoverPath;
+    element.getElementsByTagName("img")[0].src =songs[i].CoverPath;
+    element.getElementsByclassName("songName")[0].innerText =songs[i].songName;
 });
 
 // audioElement.play();
