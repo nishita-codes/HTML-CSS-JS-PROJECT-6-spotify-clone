@@ -12,14 +12,14 @@ let songItemPlay = Array.from(document.getElementsByClassName('songItemPlay'));
 
 let songs = [
     { songName: "You and Me", filePath: "songs/1.mp3", CoverPath: "images/img-1.jpeg" },
-    { songName: "Thousand Year", filePath: "songs/2.mp3", CoverPath: "images/img-2.jpeg" },
-    { songName: "Peelings-Pushpa2", filePath: "songs/3.mp3", CoverPath: "images/img-3.jpeg" },
-    { songName: "Kuch is Tarah", filePath: "songs/4.mp3", CoverPath: "images/img-4.jpeg" },
-    { songName: "Love me Like You Do", filePath: "songs/5.mp3", CoverPath: "images/img-5.jpeg" },
-    { songName: "Abhi Abhi", filePath: "songs/6.mp3", CoverPath: "images/img-6.jpeg" },
-    { songName: "Teri Ore", filePath: "songs/7.mp3", CoverPath: "images/img-7.jpeg" },
-    { songName: "Saathiya", filePath: "songs/8.mp3", CoverPath: "images/img-8.jpeg" },
-    { songName: "Closer", filePath: "songs/9.mp3", CoverPath: "images/img-9.jpeg" }
+    { songName: "Aaj Ki Raat", filePath: "songs/2.mp3", CoverPath: "images/img-2.jpeg" },
+    { songName: "Agar Tum Ho", filePath: "songs/3.mp3", CoverPath: "images/img-3.jpeg" },
+    { songName: "Do U Know", filePath: "songs/4.mp3", CoverPath: "images/img-4.jpeg" },
+    { songName: "Ek Main Aur Ek Tu", filePath: "songs/5.mp3", CoverPath: "images/img-5.jpeg" },
+    { songName: "Hauli Hauli", filePath: "songs/6.mp3", CoverPath: "images/img-6.jpeg" },
+    { songName: "Main Yaad Aaunga", filePath: "songs/7.mp3", CoverPath: "images/img-7.jpeg" },
+    { songName: "Pushpa Pushpa", filePath: "songs/8.mp3", CoverPath: "images/img-8.jpeg" },
+    { songName: "Pushpa Pushpa", filePath: "songs/9.mp3", CoverPath: "images/img-9.jpeg" }
 ]
 Array.from(document.getElementsByClassName(songItem)).forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].CoverPath;
