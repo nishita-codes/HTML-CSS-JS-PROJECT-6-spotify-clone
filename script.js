@@ -19,7 +19,7 @@ let songs = [
     { songName: "Hauli Hauli", filePath: "songs/6.mp3", CoverPath: "images/img-6.jpeg" },
     { songName: "Main Yaad Aaunga", filePath: "songs/7.mp3", CoverPath: "images/img-7.jpeg" },
     { songName: "Pushpa Pushpa", filePath: "songs/8.mp3", CoverPath: "images/img-8.jpeg" },
-    { songName: "Pushpa Pushpa", filePath: "songs/9.mp3", CoverPath: "images/img-9.jpeg" }
+    { songName: "Rabba Mereya", filePath: "songs/9.mp3", CoverPath: "images/img-9.jpeg" }
 ]
 Array.from(document.getElementsByClassName(songItem)).forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].CoverPath;
