@@ -7,17 +7,18 @@ let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
+let songItemPlay = Array.from(document.getElementsByClassName('songItemPlay'));
 
 let songs = [
     { songName: "You And Me", filePath: "songs/1.mp3", CoverPath: "images/img-1.jpeg" },
-    { songName: "Thousand Year", filePath: "songs/1.mp3", CoverPath: "images/img-2.jpeg" },
-    { songName: "Peelings-Pushpa2", filePath: "songs/", CoverPath: "images/img-3.jpeg" },
-    { songName: "Kuch is Tarah", filePath: "song/", CoverPath: "images/img-4.jpeg" },
-    { songName: "Love me Like You Do", filePath: "song/", CoverPath: "images/img-5.jpeg" },
-    { songName: "Abhi Abhi", filePath: "song/", CoverPath: "images/img-6.jpeg" },
-    { songName: "Teri Ore", filePath: "song/", CoverPath: "images/img-7.jpeg" },
-    { songName: "Saathiya", filePath: "song/", CoverPath: "images/img-8.jpeg" },
-    { songName: "Closer", filePath: "song/", CoverPath: "images/img-9.jpeg" }
+    { songName: "Thousand Year", filePath: "songs/2.mp3", CoverPath: "images/img-2.jpeg" },
+    { songName: "Peelings-Pushpa2", filePath: "songs/3.mp3", CoverPath: "images/img-3.jpeg" },
+    { songName: "Kuch is Tarah", filePath: "songs/4.mp3", CoverPath: "images/img-4.jpeg" },
+    { songName: "Love me Like You Do", filePath: "songs/5.mp3", CoverPath: "images/img-5.jpeg" },
+    { songName: "Abhi Abhi", filePath: "songs/6.mp3", CoverPath: "images/img-6.jpeg" },
+    { songName: "Teri Ore", filePath: "songs/7.mp3", CoverPath: "images/img-7.jpeg" },
+    { songName: "Saathiya", filePath: "songs/8.mp3", CoverPath: "images/img-8.jpeg" },
+    { songName: "Closer", filePath: "songs/9.mp3", CoverPath: "images/img-9.jpeg" }
 ]
 songItem.forEach((element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].CoverPath;
@@ -35,7 +36,7 @@ masterPlay.addEventListener('click', () => {
     }
     else {
         audioElement.pause();
-        masterPlay.classList.remove('fa-circle-pause');
+        masterPlay.classList.remove(' fa-circle-pause');
         masterPlay.classList.add('fa-circle-play');
         gif.style.opacity = 0;
     }
@@ -52,17 +53,17 @@ audioElement.addEventListener('timeupdate', () => {
 myProgressBar.addEventListener('change', () => {
     audioElement.currentTime = (myProgressBar.value * audioElement.duration) / 100;
 });
-const makeAllPlay = ()=>{
-    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    element.classList.remove('fa-circle-pause');
-    element.classList.add('fa-circle-play');
+const makeAllPlay = () => {
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+        element.classList.remove('fa-circle-pause');
+        element.classList.add('fa-circle-play');
     })
 }
 
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    element.addEventListener('click',(e)=>{
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+    element.addEventListener('click', (e) => {
         makeAllPlay();
-        songIndex =parseInt(e.target.id);
+        songIndex = parseInt(e.target.id);
         console.log(e.target);
         e.target.classList.remove('fa-circle-play');
         e.target.classList.add('fa-circle-pause');
@@ -72,4 +73,31 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         masterPlay.classList.remove('fa-circle-play');
         masterPlay.classList.add('fa-circle-pause');
     })
+})
+document.getElementById('next').addEventListener('click', () => {
+    if (songIndex >= 9) {
+        songIndex = 0;
+    }
+    else {
+        songIndex += 1;
+    }
+    audioElement.src = "songs/${songIndex+1}.mp3";
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-circle-play');
+    masterPlay.classList.add('fa-circle-pause');
+})
+
+document.getElementById('previous').addEventListener('click', () => {
+    if (songIndex<=0) {
+        songIndex = 0;
+    }
+    else {
+        songIndex -= 1;
+    }
+    audioElement.src = "songs/${songIndex+1}.mp3";
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-circle-play');
+    masterPlay.classList.add('fa-circle-pause');
 })
